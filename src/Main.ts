@@ -204,7 +204,7 @@ class Main extends egret.DisplayObjectContainer {
         Char1.y = 250;
         Page1.addChild(Char1);
         AlphaChangeAnimation(Char1,500,300);
-        egret.Tween.get(Char1,{loop:true}).to({x:200},500).to({x:400},500);
+        egret.Tween.get(Char1,{loop:true}).to({x:200},700).to({x:400},600);
 
         var Char2 = new egret.TextField();
         Char2.text = "情";
@@ -214,15 +214,17 @@ class Main extends egret.DisplayObjectContainer {
         Char2.y = 310;
         Page1.addChild(Char2);
         AlphaChangeAnimation(Char2,300,350);
+        egret.Tween.get(Char2,{loop:true}).to({x:200},300).to({x:400},600).to({x:300},300);
 
         var Char3 = new egret.TextField();
         Char3.text = "请";
         Char3.size = 50;
         Char3.textColor = 0xFFFF00;
         Char3.x = 200;
-        Char3.y = 360;
+        Char3.y = 370;
         Page1.addChild(Char3);
         AlphaChangeAnimation(Char3,250,400);
+        egret.Tween.get(Char3,{loop:true}).to({x:400},500).to({x:200},600);
 
         var Char4 = new egret.TextField();
         Char4.text = "见";
@@ -232,6 +234,7 @@ class Main extends egret.DisplayObjectContainer {
         Char4.y = 430;
         Page1.addChild(Char4);
         AlphaChangeAnimation(Char4,400,300);
+        egret.Tween.get(Char4,{loop:true}).to({x:400},700).to({x:200},600).to({x:250},300);
 
         var Char5 = new egret.TextField();
         Char5.text = "下";
@@ -241,6 +244,7 @@ class Main extends egret.DisplayObjectContainer {
         Char5.y = 500;
         Page1.addChild(Char5);
         AlphaChangeAnimation(Char5,300,500);
+        egret.Tween.get(Char5,{loop:true}).to({x:400},600).to({x:200},600).to({x:320},300);
 
         var Char6 = new egret.TextField();
         Char6.text = "一";
@@ -250,6 +254,7 @@ class Main extends egret.DisplayObjectContainer {
         Char6.y = 560;
         Page1.addChild(Char6);
         AlphaChangeAnimation(Char6,100,500);
+        egret.Tween.get(Char6,{loop:true}).to({x:300},400).to({x:400},500);
 
         var Char7 = new egret.TextField();
         Char7.text = "页";
@@ -259,6 +264,7 @@ class Main extends egret.DisplayObjectContainer {
         Char7.y = 610;
         Page1.addChild(Char7);
         AlphaChangeAnimation(Char7,420,290);
+        egret.Tween.get(Char7,{loop:true}).to({x:300},300).to({x:400},600);
 
 
         // */
@@ -279,12 +285,51 @@ class Main extends egret.DisplayObjectContainer {
         BuildRectangle.graphics.lineStyle(3, 0x000000);
         BuildRectangle.graphics.drawCircle(33,203,5);
         BuildRectangle.graphics.lineTo(257,203);
+
         BuildRectangle.graphics.drawCircle(607,203,5);
         BuildRectangle.graphics.drawCircle(33,523,5);
+
         BuildRectangle.graphics.drawCircle(607,523,5);
         BuildRectangle.graphics.lineTo(357,523);
+
         BuildRectangle.graphics.endFill();
         Page2.addChild(BuildRectangle);
+
+        var Major = new egret.TextField();
+        Major.size = 30;
+        Major.width = 500;
+        Major.textAlign = "LEFT";
+        Major.text = "专业 : 数字媒体技术";
+        Major.x = 70;
+        Major.y = 243;
+        Page2.addChild(Major);
+
+        var Hobbies = new egret.TextField();
+        Hobbies.size = 30;
+        Hobbies.width = 500;
+        Hobbies.textAlign = "LEFT";
+        Hobbies.text = "兴趣爱好 ：羽毛球，游泳,爱玩LOL";
+        Hobbies.x = 70;
+        Hobbies.y = 280;
+        Page2.addChild(Hobbies);
+
+        var HomeTown = new egret.TextField();
+        HomeTown.size = 30;
+        HomeTown.width = 500;
+        HomeTown.textAlign = "LEFT";
+        HomeTown.text = "家乡 ：湖南省、常德市";
+        HomeTown.x = 70;
+        HomeTown.y = 317;
+        Page2.addChild(HomeTown);
+
+        var BreifInfo = new egret.TextField();
+        BreifInfo.size = 28;
+        BreifInfo.width = 500;
+        BreifInfo.textAlign = "LEFT";
+        BreifInfo.text = "现在就读于北京工业大学软件学院数字媒体专业，大学三年级，是否考研正在斟酌，很想早点工作，本人很开放（无论哪一方面，HuaiXiao.jpg）";
+        BreifInfo.x = 70;
+        BreifInfo.y = 367;
+        Page2.addChild(BreifInfo);
 
         // /*
         var textfield = new egret.TextField();
@@ -292,10 +337,10 @@ class Main extends egret.DisplayObjectContainer {
         textfield.alpha = 0;
         textfield.width = stageW - 160;
         textfield.textAlign = egret.HorizontalAlign.CENTER;
-        textfield.size = 30;
+        textfield.size = 35;
         textfield.textColor = 0xffffff;
-        textfield.x = 160;
-        textfield.y = 33 + 200;
+        textfield.x = 60;
+        textfield.y = 130;
         this.textfield = textfield;
 
         //根据name关键字，异步获取一个json配置文件，name属性请参考resources/resource.json配置文件的内容。
@@ -331,6 +376,7 @@ class Main extends egret.DisplayObjectContainer {
             if (Value_YMoveDistance != 0) {
                 rect.y = (Value_CurrentPage_y + Value_YMoveDistance)
                 this.scrollRect = rect;
+                
             }
         }
 
